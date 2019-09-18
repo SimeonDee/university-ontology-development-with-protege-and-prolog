@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.simeondee.com/ontologies/university1"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.simeondee.com/ontologies/university1">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A university ontology that describes various concepts of a university instition as it relates to academic activities of staff and students.</Literal>
+    </Annotation>
+    <Declaration>
+        <ObjectProperty IRI="#offersDegree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Course"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Staff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#University"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Faculty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Postgraduate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAKindOfDegree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Phd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStaff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PGD"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFaculty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enrolsForDegree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContractStaff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Academic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAKindOfStudent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#teachesCourse"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSession"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDepartment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MSc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Degree"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BSc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MPhil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Department"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAStudentIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isADepartmentIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAKindOfStaff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonAcademic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#registersCourse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStudent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAFacultyIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Undergraduate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAStaffIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCourse"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Academic"/>
+        <Class IRI="#Staff"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Academic"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#teachesCourse"/>
+            <Class IRI="#Course"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BSc"/>
+        <Class IRI="#Degree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContractStaff"/>
+        <Class IRI="#Staff"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContractStaff"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#teachesCourse"/>
+            <Class IRI="#Course"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Course"/>
+        <Class IRI="#Department"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Degree"/>
+        <Class IRI="#Department"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Department"/>
+        <Class IRI="#Faculty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Faculty"/>
+        <Class IRI="#University"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MPhil"/>
+        <Class IRI="#Degree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MSc"/>
+        <Class IRI="#Degree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonAcademic"/>
+        <Class IRI="#Staff"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PGD"/>
+        <Class IRI="#Degree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Phd"/>
+        <Class IRI="#Degree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Postgraduate"/>
+        <Class IRI="#Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Postgraduate"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#registersCourse"/>
+            <Class IRI="#Course"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Postgraduate"/>
+        <DataMinCardinality cardinality="18">
+            <DataProperty IRI="#hasAge"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Staff"/>
+        <Class IRI="#Department"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Student"/>
+        <Class IRI="#Department"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Student"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasSession"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Undergraduate"/>
+        <Class IRI="#Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Undergraduate"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#registersCourse"/>
+            <Class IRI="#Course"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Undergraduate"/>
+        <DataMinCardinality cardinality="18">
+            <DataProperty IRI="#hasAge"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <DisjointUnion>
+        <Class IRI="#ContractStaff"/>
+        <Class IRI="#Academic"/>
+        <Class IRI="#ContractStaff"/>
+        <Class IRI="#NonAcademic"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#Phd"/>
+        <Class IRI="#BSc"/>
+        <Class IRI="#MPhil"/>
+        <Class IRI="#MSc"/>
+        <Class IRI="#PGD"/>
+        <Class IRI="#Phd"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#Postgraduate"/>
+        <Class IRI="#Postgraduate"/>
+        <Class IRI="#Undergraduate"/>
+    </DisjointUnion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasDepartment"/>
+        <ObjectProperty IRI="#isADepartmentIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFaculty"/>
+        <ObjectProperty IRI="#isAFacultyIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasStaff"/>
+        <ObjectProperty IRI="#isAStaffIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasStudent"/>
+        <ObjectProperty IRI="#isAStudentIn"/>
+    </InverseObjectProperties>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isADepartmentIn"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isAFacultyIn"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isAStaffIn"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isAStudentIn"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#enrolsForDegree"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#enrolsForDegree"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasSession"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCourse"/>
+        <Class IRI="#Department"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDepartment"/>
+        <Class IRI="#Faculty"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFaculty"/>
+        <Class IRI="#University"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStaff"/>
+        <Class IRI="#Department"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStudent"/>
+        <Class IRI="#Department"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfDegree"/>
+        <Class IRI="#BSc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfDegree"/>
+        <Class IRI="#MPhil"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfDegree"/>
+        <Class IRI="#MSc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfDegree"/>
+        <Class IRI="#PGD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfDegree"/>
+        <Class IRI="#Phd"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfStaff"/>
+        <Class IRI="#Academic"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfStaff"/>
+        <Class IRI="#ContractStaff"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfStaff"/>
+        <Class IRI="#NonAcademic"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfStudent"/>
+        <Class IRI="#Postgraduate"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAKindOfStudent"/>
+        <Class IRI="#Undergraduate"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#offersDegree"/>
+        <Class IRI="#Department"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#registersCourse"/>
+        <Class IRI="#Postgraduate"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#registersCourse"/>
+        <Class IRI="#Undergraduate"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#teachesCourse"/>
+        <Class IRI="#Academic"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#teachesCourse"/>
+        <Class IRI="#ContractStaff"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enrolsForDegree"/>
+        <Class IRI="#Degree"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enrolsForDegree"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#enrolsForDegree"/>
+            <Class IRI="#Degree"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCourse"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDepartment"/>
+        <Class IRI="#Department"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFaculty"/>
+        <Class IRI="#Faculty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStaff"/>
+        <Class IRI="#Staff"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStudent"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAKindOfDegree"/>
+        <Class IRI="#Degree"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAKindOfStaff"/>
+        <Class IRI="#Staff"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAKindOfStudent"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#offersDegree"/>
+        <Class IRI="#Degree"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#registersCourse"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teachesCourse"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasDepartment"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasFaculty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasStaff"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasDepartment"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasStudent"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasDepartment"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#isADepartmentIn"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#isAFacultyIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#isAStaffIn"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#isADepartmentIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#isAStudentIn"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#isADepartmentIn"/>
+    </SubObjectPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAge"/>
+        <Class IRI="#Postgraduate"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAge"/>
+        <Class IRI="#Undergraduate"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSession"/>
+        <Class IRI="#Postgraduate"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSession"/>
+        <Class IRI="#Undergraduate"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAge"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSession"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
